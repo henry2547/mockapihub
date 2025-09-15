@@ -63,8 +63,8 @@
 
                         {{-- View Modal --}}
                         <div x-show="viewUser === {{ $user->id }}"
-                             class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
-                             x-transition>
+                            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+                            x-transition>
                             <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6">
                                 <h2 class="text-xl font-bold mb-4">User Details</h2>
                                 <p><strong>ID:</strong> {{ $user->id }}</p>
@@ -80,8 +80,8 @@
 
                         {{-- Edit Modal --}}
                         <div x-show="editUser === {{ $user->id }}"
-                             class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
-                             x-transition>
+                            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+                            x-transition>
                             <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-6">
                                 <h2 class="text-xl font-bold mb-4">Edit User</h2>
                                 <form action="{{ route('users.update', $user->id) }}" method="POST" class="space-y-4">
@@ -101,8 +101,10 @@
                                         <label class="block text-sm font-medium text-gray-700">Status</label>
                                         <select name="status"
                                             class="w-full border rounded-lg p-2 focus:ring focus:ring-blue-300">
-                                            <option value="active" {{ $user->status === 'active' ? 'selected' : '' }}>Active</option>
-                                            <option value="inactive" {{ $user->status === 'inactive' ? 'selected' : '' }}>Inactive</option>
+                                            <option value="active" {{ $user->status === 'active' ? 'selected' : '' }}>
+                                                Active</option>
+                                            <option value="inactive"
+                                                {{ $user->status === 'inactive' ? 'selected' : '' }}>Inactive</option>
                                         </select>
                                     </div>
                                     <div class="flex justify-end space-x-2 mt-4">
@@ -117,8 +119,8 @@
 
                         {{-- Delete Modal --}}
                         <div x-show="deleteUser === {{ $user->id }}"
-                             class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
-                             x-transition>
+                            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+                            x-transition>
                             <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6">
                                 <h2 class="text-xl font-bold mb-4 text-red-600">Delete User</h2>
                                 <p>Are you sure you want to delete <strong>{{ $user->name }}</strong>?</p>
@@ -149,5 +151,13 @@
         </a>
     </div>
 
+    {{-- button to view JSON data --}}
+    <div class="mt-4">
+        <a href="/api/json/users" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+            View JSON Data
+        </a>
+    </div>
+
 </body>
+
 </html>

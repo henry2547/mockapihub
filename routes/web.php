@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\BookController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\UserJsonController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,7 +25,7 @@ Route::get('/api/books', [BookController::class, 'index'])->name('books.index');
 Route::get('/api/books/{id}', [BookController::class, 'show'])->name('books.show');
 Route::get('/api/books/author/{author}', [BookController::class, 'byAuthor'])->name('books.byAuthor');
 
-// Users API CRUD operations
+// Users CRUD operations
 Route::get('/api/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/api/users/{id}', [UserController::class, 'show'])->name('users.show');
 Route::post('/api/users', [UserController::class, 'store'])->name('users.store');
@@ -33,3 +34,7 @@ Route::get('/api/users/{id}/edit', [UserController::class, 'edit'])->name('users
 Route::put('/api/users/{id}', [UserController::class, 'update'])->name('users.update');
 Route::delete('/api/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
+// Users JSON data retrieval
+Route::get('/api/json/users', [UserJsonController::class, 'index']);
+Route::get('/api/json/users/{id}', [UserJsonController::class, 'show']);
+Route::get('/api/json/users/status/{status}', [UserJsonController::class, 'byStatus']);

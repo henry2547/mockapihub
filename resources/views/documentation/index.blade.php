@@ -210,7 +210,7 @@
                         <h3 class="text-lg font-semibold">Get all users</h3>
                         <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">GET</span>
                     </div>
-                    <code class="bg-gray-100 text-gray-800 p-2 rounded-md text-sm w-full block">/api/users</code>
+                    <code class="bg-gray-100 text-gray-800 p-2 rounded-md text-sm w-full block">/api/json/users</code>
                     <p class="text-gray-600 mt-3">Retrieve a list of all users with basic information.</p>
                 </div>
 
@@ -220,7 +220,7 @@
                         <h3 class="text-lg font-semibold">Get single user</h3>
                         <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">GET</span>
                     </div>
-                    <code class="bg-gray-100 text-gray-800 p-2 rounded-md text-sm w-full block">/api/users/&#123;id&#125;</code>
+                    <code class="bg-gray-100 text-gray-800 p-2 rounded-md text-sm w-full block">/api/json/users/&#123;id&#125;</code>
                     <p class="text-gray-600 mt-3">Retrieve detailed information about a specific user by their ID.</p>
                 </div>
             </div>
